@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/home', function () {
+    return view('home.index', [
+        "name" => "Alfad Sabil Haq",
+        "email" => "alfadsabilahq@gmail.com",
+        "github" => "sunak27",
+    ]);
+});
+
+Route::get('/about', function () {
+    return "Halaman About";
+});
+
+Route::get('/blog', function () {
+    return view('blog');
 });
